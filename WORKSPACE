@@ -29,11 +29,10 @@ http_archive(
 load('@org_tensorflow//tensorflow:workspace.bzl', 'tf_workspace')
 tf_workspace(path_prefix = "", tf_repo_name = "org_tensorflow")
 
-http_archive(
+git_repository(
     name = "com_github_nelhage_rules_boost",
-    urls = ["https://github.com/nelhage/rules_boost/archive/769c22fa72177314cd6fae505bd36116d6ed1f6b.tar.gz"],
-    sha256 = "b2fccaabeb6ee243c7632dd2a4d0419c78e43e1f063cb4b6a117630d060b440e",
-    strip_prefix = "rules_boost-769c22fa72177314cd6fae505bd36116d6ed1f6b",
+    commit = "c1975a9a45c97823ae9e68fbccb821418099168f",
+    remote = "https://github.com/nelhage/rules_boost",
 )
 
 load("@com_github_nelhage_rules_boost//:boost/boost.bzl", "boost_deps")
